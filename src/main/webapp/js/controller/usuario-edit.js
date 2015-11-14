@@ -25,6 +25,20 @@ $(function() {
 			seat : $("#seat").val(),
 
 		};
+	
+		if ($("#nome").val() == ""){
+			bootbox.alert("Por favor informe um nome!").done(saveOk).fail(saveFailed);
+		}
+		else if ($("#email").val() == ""){
+			bootbox.alert("Por favor informe um email!").done(saveOk).fail(saveFailed);
+		}
+		else if ($("#senha").val() == ""){
+			bootbox.alert("Por favor informe uma senha!").done(saveOk).fail(saveFailed);
+		}
+		else if ($("#seat").val() == ""){
+			bootbox.alert("Por favor informe um seat!").done(saveOk).fail(saveFailed);
+		}
+		
 		if (id = $("#id").val()) {
 			UsuarioProxy.update(id, data).done(saveOk).fail(saveFailed);
 		} else {
